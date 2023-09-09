@@ -1,0 +1,33 @@
+name: Main Branch Automated Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm run wdio
+
+    # - name: Upload test report
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: test-report
+    #     path: reports/
+
+  # You can add more steps for deployment or other actions as needed.
