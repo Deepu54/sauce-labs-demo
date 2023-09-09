@@ -13,9 +13,9 @@ exports.config = {
     // should work too though). These services define specific user and key (or access key)
     // values you need to put in here in order to connect to these services.
     //
-    // user: process.env.BROWSERSTACK_USERNAME,
-    // key: process.env.BROWSERSTACK_ACCESS_KEY,
-    //
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
+    
     // If you run your tests on Sauce Labs you can specify the region you want to run your tests
     // in via the `region` property. Available short handles for regions are `us` (default), `eu` and `apac`.
     // These regions are used for the Sauce Labs VM cloud and the Sauce Labs Real Device Cloud.
