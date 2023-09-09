@@ -1,4 +1,19 @@
 exports.config = {
+    reporters : ['spec',
+    ["html-nice", {
+        outputDir: './reports/html-reports/',
+        filename: 'report.html',
+        reportTitle: 'Test Report Title',
+        linkScreenshots: true,
+        //to show the report in a browser when done
+        showInBrowser: true,
+        collapseTests: false,
+        //to turn on screenshots after every test
+        useOnAfterCommandForScreenshot: false
+    }
+    ]
+],
+    
     //
     // ====================
     // Runner Configuration
@@ -66,23 +81,18 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: {
+    capabilities: [{
         capabilities: [
             {
-              'browserName': 'chrome', // The browser you want to test
-              'browserstack.local': 'true', // Enable BrowserStack Local
-              'browserstack.localIdentifier': 'YOUR_LOCAL_IDENTIFIER', // Optional, set if needed
-              'os': 'Windows', // The operating system
-              'os_version': '10', // OS version
-              'resolution': '1920x1080', // Screen resolution
-              // Other capabilities...
-            },
-            // Add more capabilities for other browsers or devices as needed
-          ],
-        
-          // Specify BrowserStack-specific options
-          browserstackLocal: true, // Enable BrowserStack Local
-        
+              browserName: 'chrome',
+              'goog:chromeOptions': {
+                args: ['--headless'],
+            }},
+
+           ]   // More capability objects...
+    }],
+    
+       
 
     //
     // ===================
@@ -310,4 +320,4 @@ exports.config = {
     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
-}};
+}
