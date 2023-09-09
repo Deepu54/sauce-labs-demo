@@ -66,9 +66,23 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
+    capabilities: {
+        capabilities: [
+            {
+              'browserName': 'chrome', // The browser you want to test
+              'browserstack.local': 'true', // Enable BrowserStack Local
+              'browserstack.localIdentifier': 'YOUR_LOCAL_IDENTIFIER', // Optional, set if needed
+              'os': 'Windows', // The operating system
+              'os_version': '10', // OS version
+              'resolution': '1920x1080', // Screen resolution
+              // Other capabilities...
+            },
+            // Add more capabilities for other browsers or devices as needed
+          ],
+        
+          // Specify BrowserStack-specific options
+          browserstackLocal: true, // Enable BrowserStack Local
+        
 
     //
     // ===================
@@ -296,4 +310,4 @@ exports.config = {
     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
-}
+}};

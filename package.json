@@ -21,6 +21,7 @@
     "@wdio/spec-reporter": "^8.16.3"
   },
   "dependencies": {
+    "browserstack-webdriver": "^2.41.1",
     "chai": "^4.3.8",
     "mocha": "^10.2.0"
   }
